@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Login to site</title>
+    <style>
+    body {
+      overflow: hidden;
+      margin: 0px;
+      padding: 0px;
+      background: white;
+    }
+
+    #mainContainer:first-child {
+      margin-top: 0.8em;
+    }
+
+    .subMenuContainer > div {
+      margin-top: 0.4em;
+    }
+
+    div:last-child {
+      margin-bottom: 0.4em;
+    }
+
+    div.mainMenu
+    {
+      font-family: sans-serif;
+      font-size: 0.8em;
+      margin-left: 1em;
+      width: 12em;
+    }
+
+    div.mainMenu, div.subMenu {
+      cursor: pointer;
+      text-align: left;
+      padding: 1px 3px;
+      margin-right: 0.4em;
+    }
+    div.mainMenu:hover, div.subMenu:hover {
+      background: #aaaaaa;
+    }
+
+    #sub_0, #sub_1, #sub_2, #sub_3, #sub_4, #sub_5, #sub_6, #sub_7, #sub_8, #sub_9 {
+       position: absolute;
+       left: 11em;
+       width: 11em;
+       background: white;
+       border: 1px solid #808080;
+       display: none;
+       font-family: sans-serif;
+       font-size: 1em;
+       margin-top: 1px;      
+    }
+
+    #main_0:hover #sub_0, #main_1:hover #sub_1, #main_2:hover #sub_2, #main_3:hover #sub_3, #main_4:hover #sub_4, #main_5:hover #sub_5, #main_6:hover #sub_6, #main_7:hover #sub_7, #main_8:hover #sub_8, #main_9:hover #sub_9 {
+       display: block;
+    }
+
+    #sub_0:hover, #sub_1:hover, #sub_2:hover, #sub_3:hover, #sub_4:hover, #sub_5:hover, #sub_6:hover, #sub_7:hover, #sub_8:hover, #sub_9:hover {
+       display: block;
+       left: 3em;
+       -webkit-transition: left 0.1s ease;
+    }
+    </style>
+
+    <script src="popup.js"></script>
+  </head>
+
+  <body>
+
+    <script id="mainItemRow" type="text/html">
+      <div class="mainMenu" id="main_{{idx}}" data-url="https://www.google.com" data-keywords="{{keywords}}" >{{title}}</div>
+    </script>
+
+    <script id="subItemContainer" type="text/html"><div id="sub_{{idx}}" class="subMenuContainer" style="{{substyle}}">{{subItemsHtml}}</div></script>
+
+    <script id="subItemRow" type="text/html">
+      <div class="subMenu" data-url="https://www.google.com" data-keywords="{{keywords}}" >{{title}}</div>
+    </script>
+
+    <div>
+    <div id="mainContainer">
+    </div>
+  </body>
+</html>
